@@ -1,6 +1,5 @@
-FROM alpine:latest
-RUN apk add --no-cache bash
+FROM ubuntu:latest
 WORKDIR /app
-COPY test_hello.sh .
-RUN chmod +x test_hello.sh
+COPY . .
+RUN chmod +x test_hello.sh hello.sh
 CMD ["bash", "test_hello.sh"]
