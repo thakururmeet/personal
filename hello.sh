@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "Something went wrong!"
+echo "Hello, World! Pipeline is working!"
