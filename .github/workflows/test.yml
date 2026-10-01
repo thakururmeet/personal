@@ -1,0 +1,19 @@
+name: Test Self-Hosted Runner
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: self-hosted
+    steps:
+      - name: Check runner hostname
+        run: hostname
+
+      - name: Check OS
+        run: cat /etc/os-release | head -3
+
+      - name: Hello from the runner
+        run: echo "Job executed on self-hosted runner successfully!"
