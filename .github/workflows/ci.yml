@@ -8,13 +8,19 @@ on:
 
 jobs:
   test:
-    runs-on: self-hosted 
+    runs-on: self-hosted
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Run tests
         run: bash test_hello.sh
+
+      - name: Build Docker image
+        run: docker build -t hello-app .
+
+      - name: Run Docker container
+        run: docker run --rm hello-app
 
       - name: Deploy (simulate)
         run: echo "All tests passed! Deploying..."
